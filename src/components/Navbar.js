@@ -12,10 +12,6 @@ function Navbar(props) {
         <div>
           <ul>
             <Link className="Link"> Home</Link>
-            <li>Africa</li>
-            <li>America</li>
-            <li>Europa</li>
-            <li>Asia</li>
           </ul>
         </div>
       </nav>

@@ -4,22 +4,28 @@ import useFetchData from "../hooks/useFetchData";
 import Countries from "./Countries";
 import Navbar from "./Navbar";
 import "../App.scss";
+import Loader from "./Loader";
 
 function Home(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
+  console.log(isLoading);
   return (
     <>
       <Navbar />
       <div className="countries">
-        {countries.map((country) => (
-          <Countries
-            name={country.name.official}
-            capital={country.capital}
-            continent={country.region}
-            population={country.population}
-            flag={country.flags.png}
-          />
-        ))}
+        {countries.length ? (
+          countries.map((country) => (
+            <Countries
+              name={country.name.official}
+              capital={country.capital}
+              continent={country.region}
+              population={country.population}
+              flag={country.flags.png}
+            />
+          ))
+        ) : (
+          <Loader />
+        )}
       </div>
     </>
   );
