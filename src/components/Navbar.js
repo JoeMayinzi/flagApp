@@ -17,6 +17,9 @@ function Navbar(props) {
             <Link to={"/africa"} className="Link">
               Africa
             </Link>
+            <Link to={"/america"} className="Link">
+              America
+            </Link>
           </ul>
         </div>
       </nav>

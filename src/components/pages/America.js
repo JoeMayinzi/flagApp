@@ -5,7 +5,7 @@ import Loader from "../Loader";
 import Navbar from "../Navbar";
 import Countries from "../Countries";
 
-function Africa(props) {
+function America(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
   console.log(isLoading);
   console.log(countries);
@@ -15,7 +15,7 @@ function Africa(props) {
       <div className="countries">
         {countries.length ? (
           countries
-            .filter((c) => c.region === "Africa")
+            .filter((c) => c.region === "Americas")
             .map((country) => (
               <Countries
                 name={country.name.official}
@@ -33,4 +33,4 @@ function Africa(props) {
   );
 }
 
-export default Africa;
+export default America;
