@@ -1,0 +1,52 @@
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+  background-color: #282c34;
+  padding: 10px;
+  margin-bottom: 20px;
+
+  .nav-range {
+    margin-top: 18px !important;
+  }
+  ul {
+    display: flex;
+  }
+  li {
+    list-style-type: none;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 15px;
+  }
+}
+
+.countries {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10em;
+
+  img {
+    transition: transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.452);
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}
