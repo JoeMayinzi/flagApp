@@ -4,6 +4,7 @@ import useFetchData from "../../hooks/useFetchData";
 import Loader from "../Loader";
 import Navbar from "../Navbar";
 import Countries from "../Countries";
+import Footer from "../Footer";
 
 function Africa(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
@@ -29,6 +30,7 @@ function Africa(props) {
           <Loader />
         )}
       </div>
+      <Footer />
     </>
   );
 }
