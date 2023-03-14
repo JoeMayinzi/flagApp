@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 export default function useFetchData(url) {
-  const [flags, setFlags] = useState([]);
+  const [countries, setCountries] = useState([]);
   const [isLoading, setIsloading] = useState(false);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export default function useFetchData(url) {
         const datas = await response.data;
 
         if (response.status) {
-          setFlags(datas);
+          setCountries(datas);
         }
       } catch (e) {
         throw new Error("an error is occured", e);
@@ -24,5 +24,5 @@ export default function useFetchData(url) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return [flags, isLoading];
+  return [countries, isLoading];
 }

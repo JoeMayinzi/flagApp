@@ -1,15 +1,15 @@
 import React from "react";
 
-function Countries(CountriesFlags) {
-  console.log(CountriesFlags);
+function Countries(...props) {
+  console.log(props);
   return (
     <>
       <div className="country">
         <img
-          src={CountriesFlags.CountriesFlags}
-          alt="countries flags"
-          width={"320"}
-          height={"231"}
+          src={props[0].flag}
+          alt={props[0].name + " flag"}
+          width="320"
+          height="213"
         />
       </div>
     </>

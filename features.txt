@@ -1,3 +1,12 @@
 - BASEURL = https://restcountries.com/v3.1/all
 - hymne au moment de clique sur button
 - jeu de deviner le pays via le flag
+
+
+- name : country.name.official
+- capital : country.capital => array
+- region : country.region
+- language : country.languages
+- population : country.population
+-continents : country.continents
+flag = country.flags.png

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Range from "./Range";
 
 function Navbar(props) {
@@ -10,9 +11,10 @@ function Navbar(props) {
         </div>
         <div>
           <ul>
+            <Link className="Link"> Home</Link>
             <li>Africa</li>
             <li>America</li>
-            <li>Eiropa</li>
+            <li>Europa</li>
             <li>Asia</li>
           </ul>
         </div>
