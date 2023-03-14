@@ -5,6 +5,7 @@ import Countries from "./Countries";
 import Navbar from "./Navbar";
 import "../App.scss";
 import Loader from "./Loader";
+import Footer from "./Footer";
 
 function Home(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
@@ -27,6 +28,7 @@ function Home(props) {
           <Loader />
         )}
       </div>
+      <Footer />
     </>
   );
 }
