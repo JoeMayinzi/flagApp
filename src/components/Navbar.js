@@ -11,7 +11,12 @@ function Navbar(props) {
         </div>
         <div>
           <ul>
-            <Link className="Link"> Home</Link>
+            <Link to={"/"} className="Link">
+              Home
+            </Link>
+            <Link to={"/africa"} className="Link">
+              Africa
+            </Link>
           </ul>
         </div>
       </nav>
