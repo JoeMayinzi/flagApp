@@ -1,34 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Range from "./Range";
+import { NavLink } from "react-router-dom";
 
 function Navbar(props) {
   return (
     <header>
       <nav className="navbar">
-        <div className="nav-range">
-          <Range />
-        </div>
+        <div className="nav-range"></div>
         <div>
           <ul>
-            <Link to={"/"} className="Link">
+            <NavLink
+              to={"/"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Home
-            </Link>
-            <Link to={"/africa"} className="Link">
+            </NavLink>
+            <NavLink
+              to={"/africa"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Africa
-            </Link>
-            <Link to={"/america"} className="Link">
+            </NavLink>
+            <NavLink
+              to={"/america"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               America
-            </Link>
-            <Link to={"/asia"} className="Link">
+            </NavLink>
+            <NavLink
+              to={"/asia"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Asia
-            </Link>
-            <Link to={"/europe"} className="Link">
+            </NavLink>
+            <NavLink
+              to={"/europe"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Europe
-            </Link>
-            <Link to={"/oceania"} className="Link">
+            </NavLink>
+            <NavLink
+              to={"/oceania"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Oceania
-            </Link>
+            </NavLink>
           </ul>
         </div>
       </nav>
