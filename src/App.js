@@ -11,7 +11,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Africa" element={<Africa />} />
-      <Route path="/America" element={<America />} />
+      <Route path="/Americas" element={<America />} />
       <Route path="/Asia" element={<Asia />} />
       <Route path="/Europe" element={<Europa />} />
       <Route path="/Oceania" element={<Oceania />} />
