@@ -1,7 +1,12 @@
-function Range({ countries, rangeValue, setRangeValue }) {
+import { useContext } from "react";
+import { RangeContext } from "../context/RangeContext";
+
+function Range({ countries }) {
+  const [rangeValue, setRangeValue] = useContext(RangeContext);
   function onChangeHandler(e) {
     const value = e.target.value;
     setRangeValue(value);
+    console.log(rangeValue);
   }
   return (
     <div className="range">

@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar(props) {
+  console.log("Navbar only re-render initially");
   return (
     <header>
       <nav className="navbar">
@@ -43,6 +44,12 @@ function Navbar(props) {
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Oceania
+            </NavLink>
+            <NavLink
+              to={"/oceania"}
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
+              Flag Game
             </NavLink>
           </ul>
         </div>

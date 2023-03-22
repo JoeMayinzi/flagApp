@@ -10,11 +10,11 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/africa" element={<Africa />} />
-      <Route path="/america" element={<America />} />
-      <Route path="/asia" element={<Asia />} />
-      <Route path="/europe" element={<Europa />} />
-      <Route path="/oceania" element={<Oceania />} />
+      <Route path="/Africa" element={<Africa />} />
+      <Route path="/America" element={<America />} />
+      <Route path="/Asia" element={<Asia />} />
+      <Route path="/Europe" element={<Europa />} />
+      <Route path="/Oceania" element={<Oceania />} />
     </Routes>
   );
 }

@@ -1,6 +1,7 @@
 import React from "react";
 
 function Loader(props) {
+  console.log("uncessacery re-render Loader");
   return (
     <div class="lds-ring">
       <div></div>
