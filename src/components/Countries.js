@@ -1,7 +1,6 @@
 import React from "react";
 
 function Countries(...props) {
-  console.log("re-render country");
   return (
     <>
       <div>

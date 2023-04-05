@@ -59,7 +59,7 @@ header {
 }
 
 .modal-content {
-  width: 321px !important;
+  width: 350px !important;
 }
 
 .modal-body h5 {
@@ -78,6 +78,10 @@ header {
 
 .modal-header {
   padding: 0 !important;
+}
+
+.modal-header img {
+  width: 100% !important;
 }
 
 .lds-ring {

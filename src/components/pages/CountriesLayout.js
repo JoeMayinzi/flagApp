@@ -33,11 +33,12 @@ function CountriesLayout(props) {
                   population: country.population,
                   officialName: country.name.official,
                   capital: country.capital,
+                  languages: Object.values(country.languages).toString(),
                   continent: country.continents[0],
                   currencies: country.currencies,
                 });
 
-                console.log(country);
+                console.log(Object.values(country.currencies).values());
               }}
             >
               <Countries
@@ -70,6 +71,7 @@ function CountriesLayout(props) {
               <ul>
                 <li>official name : {modalCountryInfos.officialName}</li>
                 <li>capital : {modalCountryInfos.capital}</li>
+                <li>languages : {modalCountryInfos.languages}</li>
                 <li>population : {modalCountryInfos.population}</li>
                 <li>continent : {modalCountryInfos.continent}</li>
               </ul>
