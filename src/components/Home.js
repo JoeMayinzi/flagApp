@@ -9,7 +9,7 @@ function Home(props) {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="content">
         <Range />
         <CountriesLayout />
       </div>

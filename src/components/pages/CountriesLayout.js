@@ -4,15 +4,37 @@ import { RangeContext } from "../../context/RangeContext";
 import useFetchData from "../../hooks/useFetchData";
 import Countries from "../Countries";
 import Loader from "../Loader";
+import { useState } from "react";
 
 function CountriesLayout(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
   const [rangeValue] = useContext(RangeContext);
+  const [modalCountryInfos, setmodalCountryInfos] = useState({
+    img: "",
+    population: null,
+    officialName: "",
+    continent: null,
+  });
+
   return (
     <div className="countries">
       {countries.length
         ? countries.slice(0, rangeValue).map((country) => (
-            <div data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <div
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              onClick={() => {
+                setmodalCountryInfos({
+                  ...modalCountryInfos,
+                  img: country.flags.png,
+                  population: country.population,
+                  officialName: country.name.official,
+                  continent: country.continents[0],
+                });
+
+                console.log(modalCountryInfos);
+              }}
+            >
               <Countries
                 name={country.name.official}
                 capital={country.capital}
@@ -33,28 +55,18 @@ function CountriesLayout(props) {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                Modal title
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <img
+                src={modalCountryInfos.img}
+                alt={modalCountryInfos.officialName + "flag"}
+              />
             </div>
-            <div className="modal-body">...</div>
-            <div className="modal-footer">
-              <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" className="btn btn-primary">
-                Save changes
-              </button>
+            <div className="modal-body">
+              <h5>Infos</h5>
+              <ul>
+                <li>official name : {modalCountryInfos.officialName}</li>
+                <li>population : {modalCountryInfos.population}</li>
+                <li>continent : {modalCountryInfos.continent}</li>
+              </ul>
             </div>
           </div>
         </div>
