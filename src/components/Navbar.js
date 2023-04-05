@@ -22,7 +22,7 @@ function Navbar(props) {
               Africa
             </NavLink>
             <NavLink
-              to={"/america"}
+              to={"/Americas"}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               America
@@ -46,7 +46,7 @@ function Navbar(props) {
               Oceania
             </NavLink>
             <NavLink
-              to={"/oceania"}
+              to={"/FlagGame"}
               className={({ isActive }) => (isActive ? "active" : "")}
             >
               Flag Game
