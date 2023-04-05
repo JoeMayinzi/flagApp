@@ -13,7 +13,10 @@ function CountriesLayout(props) {
     img: "",
     population: null,
     officialName: "",
+    capital: null,
     continent: null,
+    languages: null,
+    currencies: [],
   });
 
   return (
@@ -29,10 +32,12 @@ function CountriesLayout(props) {
                   img: country.flags.png,
                   population: country.population,
                   officialName: country.name.official,
+                  capital: country.capital,
                   continent: country.continents[0],
+                  currencies: country.currencies,
                 });
 
-                console.log(modalCountryInfos);
+                console.log(country);
               }}
             >
               <Countries
@@ -64,6 +69,7 @@ function CountriesLayout(props) {
               <h5>Infos</h5>
               <ul>
                 <li>official name : {modalCountryInfos.officialName}</li>
+                <li>capital : {modalCountryInfos.capital}</li>
                 <li>population : {modalCountryInfos.population}</li>
                 <li>continent : {modalCountryInfos.continent}</li>
               </ul>
