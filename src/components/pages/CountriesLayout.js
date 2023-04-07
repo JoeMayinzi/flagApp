@@ -4,21 +4,13 @@ import { RangeContext } from "../../context/RangeContext";
 import useFetchData from "../../hooks/useFetchData";
 import Countries from "../Countries";
 import Loader from "../Loader";
-import { useState } from "react";
 import Modal from "../Modal";
+import { CountryContext } from "../../context/Country";
 
 function CountriesLayout(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
   const [rangeValue] = useContext(RangeContext);
-  const [modalCountryInfos, setmodalCountryInfos] = useState({
-    img: "",
-    population: null,
-    officialName: "",
-    capital: null,
-    continent: null,
-    languages: null,
-    currencies: [],
-  });
+  const [modalCountryInfos, setmodalCountryInfos] = useContext(CountryContext);
 
   return (
     <div className="countries">

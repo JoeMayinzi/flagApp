@@ -4,12 +4,15 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import { ContextProvider } from "./context/RangeContext";
 import reportWebVitals from "./reportWebVitals";
+import { CountryProvider } from "./context/Country";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <ContextProvider>
-      <App />
+      <CountryProvider>
+        <App />
+      </CountryProvider>
     </ContextProvider>
   </BrowserRouter>
 );

@@ -10,3 +10,16 @@
 - population : country.population
 -continents : country.continents
 flag = country.flags.png
+
+
+
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+...modalCountryInfos,
+      img: country.flags.png,
+      population: country.population,
+      officialName: country.name.official,
+      capital: country.capital,
+      languages: Object.values(country.languages).toString(),
+      continent: country.continents[0],
+      currencies: country.currencies,
