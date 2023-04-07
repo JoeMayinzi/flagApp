@@ -5,6 +5,7 @@ import useFetchData from "../../hooks/useFetchData";
 import Countries from "../Countries";
 import Loader from "../Loader";
 import { useState } from "react";
+import Modal from "../Modal";
 
 function CountriesLayout(props) {
   const [countries, isLoading] = useFetchData(BASE_URL);
@@ -37,8 +38,6 @@ function CountriesLayout(props) {
                   continent: country.continents[0],
                   currencies: country.currencies,
                 });
-
-                console.log(Object.values(country.currencies).values());
               }}
             >
               <Countries
@@ -51,34 +50,7 @@ function CountriesLayout(props) {
             </div>
           ))
         : isLoading && <Loader />}
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex="-1"
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <img
-                src={modalCountryInfos.img}
-                alt={modalCountryInfos.officialName + "flag"}
-              />
-            </div>
-            <div className="modal-body">
-              <h5>Infos</h5>
-              <ul>
-                <li>official name : {modalCountryInfos.officialName}</li>
-                <li>capital : {modalCountryInfos.capital}</li>
-                <li>languages : {modalCountryInfos.languages}</li>
-                <li>population : {modalCountryInfos.population}</li>
-                <li>continent : {modalCountryInfos.continent}</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Modal modalCountryInfos={modalCountryInfos} />
     </div>
   );
 }
