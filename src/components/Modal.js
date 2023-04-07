@@ -1,6 +1,6 @@
 import React from "react";
 
-function Modal({ modalCountryInfos }) {
+function Modal({ modalCountryInfos, continentName }) {
   return (
     <div
       className="modal fade"
@@ -24,7 +24,11 @@ function Modal({ modalCountryInfos }) {
               <li>capital : {modalCountryInfos.capital}</li>
               <li>languages : {modalCountryInfos.languages}</li>
               <li>population : {modalCountryInfos.population}</li>
-              <li>continent : {modalCountryInfos.continent}</li>
+              {continentName ? (
+                ""
+              ) : (
+                <li>continent {modalCountryInfos.continent}</li>
+              )}
             </ul>
           </div>
         </div>
